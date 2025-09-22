@@ -44,6 +44,7 @@ resource "aws_s3_object" "conf" {
     mgmt_gw              = cidrhost(var.security_vpc_mgmt_subnet_cidr1, 1)
     fgt_priority         = "255"
     fgt-remote-heartbeat = element(tolist(aws_network_interface.eni-fgt2-hb.private_ips), 0)
+    adminsport           = var.adminsport
   })
 }
 
@@ -66,5 +67,6 @@ resource "aws_s3_object" "conf2" {
     mgmt_gw              = cidrhost(var.security_vpc_mgmt_subnet_cidr2, 1)
     fgt_priority         = "100"
     fgt-remote-heartbeat = element(tolist(aws_network_interface.eni-fgt1-hb.private_ips), 0)
+    adminsport           = var.adminsport
   })
 }
