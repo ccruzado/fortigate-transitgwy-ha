@@ -1,5 +1,6 @@
 config system global
 set hostname ${fgt_id}
+set admin-sport ${adminsport}
 end
 config system interface
 edit port1                            

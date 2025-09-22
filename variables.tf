@@ -430,3 +430,7 @@ variable "cidr_for_access" {
   description = "Provide a network CIDR for accessing the FortiGate instances"
   default     = "0.0.0.0/0"
 }
+
+variable "adminsport" {
+  default = "8443"
+}
